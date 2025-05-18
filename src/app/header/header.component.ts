@@ -8,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-
+  imgAlt = 'TODO APP'
+  get headerImg(){
+    return 'assets/task-management-logo.png';
+  }
 }
