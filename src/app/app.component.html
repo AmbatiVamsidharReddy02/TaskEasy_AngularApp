@@ -1,13 +1,18 @@
 <app-header />
 
-<main >
+<main>
   <ul id="users">
     <!-- to add attributes to the components we use @Input in component.ts to take the input from here -->
 
     <!-- users.avatar coming from app.component.ts  -->
     <li *ngFor="let user of users">
-      <app-user [avatar]="user.avatar" [alt]="user.name" [name]="user.name" [id]="user.id"
-      (select)="viewTasks($event)" />
+      <app-user [user]="user" (select)="viewTasks($event)" />
     </li>
   </ul>
+  
+  @if (currentUser){
+    <app-task [userName]="currentUser.name" />
+  } @else {
+    <p id="fallback">Please choose any user for their tasks!</p>
+  }
 </main>
