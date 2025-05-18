@@ -1,1 +1,13 @@
 <app-header />
+
+<main >
+  <ul id="users">
+    <!-- to add attributes to the components we use @Input in component.ts to take the input from here -->
+
+    <!-- users.avatar coming from app.component.ts  -->
+    <li *ngFor="let user of users">
+      <app-user [avatar]="user.avatar" [alt]="user.name" [name]="user.name" [id]="user.id"
+      (select)="viewTasks($event)" />
+    </li>
+  </ul>
+</main>
