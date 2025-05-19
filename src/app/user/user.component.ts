@@ -11,6 +11,7 @@ import { User } from '../app.component';
 })
 export class UserComponent {
    @Input() user!: User
+   @Input() selected!: boolean
    @Output() select = new EventEmitter<string>();
 
    get imgPath() {
