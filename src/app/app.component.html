@@ -6,12 +6,12 @@
 
     <!-- users.avatar coming from app.component.ts  -->
     <li *ngFor="let user of users">
-      <app-user [user]="user" [selected]="user?.id === currentUser?.id" (select)="viewTasks($event)" />
+      <app-user [user]="user" [selected]="user?.id === currentUser?.id" (select)="viewCustomer($event)" />
     </li>
   </ul>
   
   @if (currentUser){
-    <app-tasks [user]="currentUser" [tasks]="currentUserTasks" (completedTask)="filterCompletedTasks($event)"/>
+    <app-tasks [user]="currentUser"/>
   } @else {
     <p id="fallback">Please choose any user for their tasks!</p>
   }

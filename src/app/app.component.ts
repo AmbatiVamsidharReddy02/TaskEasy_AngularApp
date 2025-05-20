@@ -29,17 +29,9 @@ export interface Task {
 })
 export class AppComponent {
   users = DUMMY_USERS;
-  tasks = DUMMY_TASKS;
   currentUser!: User | undefined;
-  currentUserTasks!: Task[] | undefined
-  viewTasks(selectedUser: string | undefined) {
+  viewCustomer(selectedUser: string | undefined) {
     // get the user with id 
     this.currentUser = this.users.find((user) => user.id == selectedUser);
-    this.currentUserTasks = this.tasks.filter((task)=> task.userId == selectedUser);
-  }
-
-  filterCompletedTasks(taskId: string | undefined) {
-    console.log(`task completed with task Id - ${taskId} arrived in app component`)
-    this.currentUserTasks = this?.currentUserTasks?.filter((task) => task.id !== taskId);
-}
+  }  
 }
