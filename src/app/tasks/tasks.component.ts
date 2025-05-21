@@ -3,23 +3,38 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TaskComponent } from './task/task.component';
 import { Task, User } from '../app.component';
 import { DUMMY_TASKS } from '../dummy-tasks';
+import { EventInfoWrapper } from '@angular/core/primitives/event-dispatch';
+import { NewTaskComponent } from './new-task/new-task.component';
+import { CardComponent } from "../ui/card/card.component";
+import { TaskService } from './tasks.service';
 
 @Component({
   selector: 'app-tasks',
-  imports: [CommonModule, TaskComponent],
+  imports: [CommonModule, TaskComponent, NewTaskComponent, CardComponent],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.css'
 })
 export class TasksComponent {
-  tasksList: Task[] = DUMMY_TASKS;
   @Input({ required: true }) user?: User
+  hideAddTask: boolean = true;
 
-  get getSelectedUserTasks(){
-    return this.tasksList.filter((task)=> task.userId == this.user?.id);
+  constructor(private taskService: TaskService) { }
+
+  get getSelectedUserTasks() {
+    return this.taskService.getUserTasks(this.user);
   }
 
   filterCompletedTasks(taskId: string | undefined) {
-    console.log(`task completed with task Id - ${taskId} arrived in app component`)
-    this.tasksList = this?.tasksList?.filter((task) => task.id !== taskId);
+    this.taskService.filterCompletedTasks(taskId);
   }
+
+  hideAddTaskMenu(hideAddTask: boolean) {
+    this.hideAddTask = hideAddTask;
+  }
+
+  addTask(taskData: Task) {
+    this.taskService.addTask(taskData, this.user?.id);
+    this.hideAddTaskMenu(true);
+  }
+
 }

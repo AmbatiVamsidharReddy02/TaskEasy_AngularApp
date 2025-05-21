@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { User } from '../app.component';
+import { CardComponent } from "../ui/card/card.component";
 
 @Component({
    selector: 'app-user',
-   imports: [CommonModule],
+   imports: [CommonModule, CardComponent],
    standalone: true,
    templateUrl: './user.component.html',
    styleUrl: './user.component.css'
