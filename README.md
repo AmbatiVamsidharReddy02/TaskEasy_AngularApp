@@ -1,4 +1,4 @@
-# EasyTrack
+# TaskEasy
 
 ![alt text](image.png)
 
