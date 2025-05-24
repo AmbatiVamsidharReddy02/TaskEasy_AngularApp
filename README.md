@@ -16,6 +16,9 @@ Task Created
 Complete Tasks
 ![alt text](image-4.png)
 
+Switch Users
+![alt text](image-6.png)
+
 Upon Page Refresh Tasks Perists
 ![alt text](image-5.png)
 
