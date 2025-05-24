@@ -1,5 +1,25 @@
 # MyFirstApp
 
+EasyTrack
+
+![alt text](image.png)
+
+User Tasks
+![alt text](image-1.png)
+
+Add Tasks
+![alt text](image-2.png)
+
+Task Created
+![alt text](image-3.png)
+
+Complete Tasks
+![alt text](image-4.png)
+
+Upon Page Refresh Tasks Perists
+![alt text](image-5.png)
+
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.12.
 
 ## Development server
