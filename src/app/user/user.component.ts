@@ -5,8 +5,7 @@ import { CardComponent } from "../ui/card/card.component";
 
 @Component({
    selector: 'app-user',
-   imports: [CommonModule, CardComponent],
-   standalone: true,
+   standalone: false,
    templateUrl: './user.component.html',
    styleUrl: './user.component.css'
 })

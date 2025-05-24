@@ -23,7 +23,7 @@ export interface Task {
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, UserComponent, CommonModule, TasksComponent],
+  standalone:false,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
