@@ -1,6 +1,4 @@
-# MyFirstApp
-
-EasyTrack
+# EasyTrack
 
 ![alt text](image.png)
 
