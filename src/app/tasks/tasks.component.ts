@@ -24,17 +24,11 @@ export class TasksComponent {
     return this.taskService.getUserTasks(this.user);
   }
 
-  filterCompletedTasks(taskId: string | undefined) {
-    this.taskService.filterCompletedTasks(taskId);
-  }
+  // filterCompletedTasks(taskId: string | undefined) {
+  //   this.taskService.filterCompletedTasks(taskId);
+  // }
 
   hideAddTaskMenu(hideAddTask: boolean) {
     this.hideAddTask = hideAddTask;
   }
-
-  addTask(taskData: Task) {
-    this.taskService.addTask(taskData, this.user?.id);
-    this.hideAddTaskMenu(true);
-  }
-
 }

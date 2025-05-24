@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Task } from '../../app.component';
 import { TaskService } from '../tasks.service';
@@ -14,8 +14,8 @@ export class NewTaskComponent {
   inputTitle = '';
   inputSummary = '';
   inputDate = '';
+  @Input() userId : string | undefined;
   @Output() hideAddTaskEmitter = new EventEmitter<boolean>();
-  @Output() emitAddedTask = new EventEmitter<Task>();
 
   constructor(private taskService:TaskService){}
 
@@ -31,9 +31,7 @@ export class NewTaskComponent {
       title: this.inputTitle,
       userId: ""
     }
-    this.emitAddedTask.emit(task);
-
-    // use service instead of emitting the task. 
-
+    this.taskService.addTask(task, this.userId)
+    this.hideAddTaskEmitter.emit(true);
   }
 }
